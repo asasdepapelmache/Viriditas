@@ -1,0 +1,33 @@
+# Viriditas configuration.
+# Copy to viriditas.toml (or run `viriditas init`) and edit.
+
+[github]
+# The target repository. It MUST NOT EXIST YET, or must be empty: GitHub only
+# indexes a full history on the first push to a fresh repository.
+repo_name = "contribution-canvas"
+private = true
+# "auto" resolves from the authenticated account. The noreply address is always
+# linked to the account, which is what makes commits count.
+name = "auto"
+email = "auto"
+
+[range]
+# 1969-12-31 is the oldest reachable day, and only with a negative timezone.
+start = "1969-12-31"
+end = "today"
+
+[density]
+target_per_year = 2000   # commits per full year, within 5%
+min_per_day = 1          # every day gets at least this many
+max_per_day = 14
+weekend_factor = 0.75    # weekends slightly lighter
+seed = 42                # same seed, same graph, forever
+timezone = "-0300"       # offset written into every commit
+
+[commit]
+messages = ["update", "tweak", "sync", "wip", "chore", "fix", "notes"]
+file = "activity.log"    # the single file every commit rewrites
+add_readme = true        # explain the repository in its own README
+
+[local]
+workdir = "./build/contribution-canvas"

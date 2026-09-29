@@ -1,0 +1,22 @@
+# Generated repositories
+build/
+out/
+
+# Local configuration (the example is committed, yours is not)
+viriditas.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
